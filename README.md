@@ -33,6 +33,7 @@ pip install -r requirements.txt
 1. **Dataset:**
    - The dataset consists of UAV remote sensing images with COCO-style annotations.
    - Managed under the `datasets/` directory.
+   - Find ![Datase](https://github.com/Bigyu-777/AUG_Jaboticaba_tree)
 
 2. **Directory Structure:**
 ```shell
@@ -59,8 +60,8 @@ python train.py --img 640 --batch 32 --epochs 30 --data datasets/tree.yaml --cfg
 - `--img 640`: Input image size set to 640x640.
 - `--batch 32`: Batch size set to 32.
 - `--epochs 30`: Train for 30 epochs.
-- `--data datasets/data.yaml`: Dataset configuration file.
-- `--cfg models/cre_yolo.yaml`: Custom CRE-YOLO model configuration.
+- `--data datasets/tree.yaml`: Dataset configuration file.
+- `--cfg models/CRE.yaml`: Custom CRE-YOLO model configuration.
 
 ## Inference
 Perform object detection using trained weights:
