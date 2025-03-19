@@ -17,9 +17,9 @@ CRE-YOLO is optimized for the unique visual characteristics of Jaboticaba trees,
 This project requires Python 3.8 or later. It is recommended to create a virtual environment and install dependencies using the following commands:
 ```bash
 # Create a virtual environment
-python -m venv cre-yolo-env
-source cre-yolo-env/bin/activate  # Linux/Mac
-cre-yolo-env\Scripts\activate  # Windows
+conda create --name cre-yolo python==3.10
+conda activate cre-yolo
+
 
 # Install dependencies
 pip install -r requirements.txt
@@ -41,7 +41,7 @@ CRE-YOLO/
 |   |   |-- train/
 |   |   |-- val/
 |-- models/
-|   |-- cre_yolo.yaml  # CRE-YOLO model configuration
+|   |-- cre.yaml  # CRE-YOLO model configuration
 |-- train.py  # Training script
 |-- detect.py  # Inference script
 |-- README.md  # Project documentation
@@ -50,14 +50,13 @@ CRE-YOLO/
 ## Training
 Train the model using the following command:
 ```bash
-python train.py --img 640 --batch 32 --epochs 30 --data datasets/data.yaml --cfg models/cre_yolo.yaml --weights yolov5s.pt
+python train.py --img 640 --batch 32 --epochs 30 --data datasets/tree.yaml --cfg models/CRE.yaml 
 ```
 - `--img 640`: Input image size set to 640x640.
 - `--batch 32`: Batch size set to 32.
 - `--epochs 30`: Train for 30 epochs.
 - `--data datasets/data.yaml`: Dataset configuration file.
 - `--cfg models/cre_yolo.yaml`: Custom CRE-YOLO model configuration.
-- `--weights yolov5s.pt`: Load YOLOv5 pre-trained weights.
 
 ## Inference
 Perform object detection using trained weights:
@@ -68,10 +67,10 @@ python detect.py --weights runs/train/exp/weights/best.pt --img 640 --source dat
 ## Results & Performance
 Experiments on the UAV dataset demonstrate that CRE-YOLO achieves higher accuracy than YOLOv5 in Jaboticaba tree detection while maintaining reasonable computational efficiency.
 
-| Model | mAP@0.5 | mAP@0.5:0.95 | Parameters (M) |
-|------|--------|-------------|------------|
-| YOLOv5s | 0.892 | 0.512 | 7.2 |
-| CRE-YOLO | 0.926 | 0.578 | 7.8 |
+| Model | mAP@0.5 | mAP@0.5:0.95 | Parameters (M) | FPS |
+|------|--------|-------------|------------|------------|
+| YOLOv5s | 96.4 | 57.8 | 7.2 | 291 |
+| CRE-YOLO | 97.1 | 60.3 | 3.8 | 387 |
 
 ## References
 1. RT-DETR: End-to-End Object Detection with Relational Transformers
