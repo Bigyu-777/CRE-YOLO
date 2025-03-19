@@ -1,3 +1,6 @@
+⭐ This code has been completely released ⭐ 
+
+⭐ our [article](https://ieeexplore.ieee.org/abstract/document/10807194) ⭐ 
 
 # CRE-YOLO: Efficient Jaboticaba Tree Detection on UAV Platforms
 ![image](https://github.com/Bigyu-777/CRE-YOLO/blob/master/CRE-YOLO.png)
