@@ -33,7 +33,7 @@ pip install -r requirements.txt
 1. **Dataset:**
    - The dataset consists of UAV remote sensing images with COCO-style annotations.
    - Managed under the `datasets/` directory.
-   - Find ![Datase](https://github.com/Bigyu-777/AUG_Jaboticaba_tree)
+   - Find [Datase](https://github.com/Bigyu-777/AUG_Jaboticaba_tree)
 
 2. **Directory Structure:**
 ```shell
